@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "qrscanneremployee",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authqrscanneremployeead4ea935",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

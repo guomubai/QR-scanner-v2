@@ -1,0 +1,17 @@
+type Employee @model 
+	 	@key(name: "employeesByUsername", fields: ["username"], queryField: "employeesByUsername")
+  	@auth(rules: [
+    		{ allow: owner, ownerField: "username" },
+    		# { allow: public, operations: [read] } -- I commented this out, becasue I don't want any public to read anything. Only the owner can seet their stuff
+  ])
+	{
+  id: ID!
+  firstname: String!
+  lastname: String!
+	email: String!
+	title: String!
+	cardnumber: Int
+	cardbalance: Float
+	Admin: Boolean
+	username: String
+}
